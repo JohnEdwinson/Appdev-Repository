@@ -1,8 +1,5 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { AnotherPage } from './another-page/another-page';
-import { AuthenticationService } from './authentication.service';
-import { NewComponent } from './home/new-component/new-component';
 
 const routes: Routes = [
   {
@@ -13,16 +10,6 @@ const routes: Routes = [
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
-  },
-  {
-    path: 'another-page',
-    component: AnotherPage,
-    canActivate: [AuthenticationService]
-  },
-  {
-    path: 'new-component',
-    component: NewComponent,
-    canActivate: [AuthenticationService]
   }
 ];
 
