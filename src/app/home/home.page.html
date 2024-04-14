@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title class= "top">
-      Activity Page 
+      My Home Page
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -14,8 +14,8 @@
   </ion-header>
 
   <div id="container">
-    <strong>SELECT BUTTON<br></strong>
-    <ion-button>click</ion-button>
-    
+    <strong>SELECT YOUR BUTTON<br></strong>
+    <ion-button href="my-custom/1">Go By Link</ion-button>
+    <ion-button (click)="goToMyCustomPage()">Go By Event</ion-button>
   </div>
 </ion-content>
