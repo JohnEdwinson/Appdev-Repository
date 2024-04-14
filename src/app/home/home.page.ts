@@ -1,55 +1,53 @@
-import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
-import { DataService } from '../data.service';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthenticationService } from '../authentication.service';
+import { SampleService } from '../sample.service';
+import { Company } from './model/model';
+import { ModalComponent } from '../modal/modal.component';
+import { ModalController } from '@ionic/angular';
+import { AlertController } from '@ionic/angular';
+
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
 export class HomePage{
-  myArray = [];
-  nextnumber: number = 0;
-  loadingText = "Loading...";
-  isLoading = false;
-  isHide = true;
 
+  company: Company[] = [];
 
-  constructor(private router: Router, private dataService: DataService, private cdr: ChangeDetectorRef) {
-    console.log(this.dataService.canProceed);
-  }
-  
-  async showObject(){
-    try {
-      this.isLoading = true;
-      if (this.isLoading == true) {
-        this.isHide = false;
-        this.myArray = await this.dataService.fetchData1();
-        console.log(this.myArray);
-      }
-      this.isHide = true;
-    } catch (error) {
-      console.error(error);
-    } finally {
-      this.isLoading = false;
-    }
+  constructor(private route: Router, private authenticate: AuthenticationService, private sample: SampleService, private modalController: ModalController, private alertController: AlertController ) {}
+
+  ngOnInit(): void {
+    this.sample.getMusic().subscribe(item => {
+      this.company = item;
+      console.log(item)
+    });
   }
 
-  clickUnauthenticate(){
-    this.dataService.canProceed = false;
-    console.log('Successfully Unauthenticate!');
-    this.isHide = false;
-  }
+async logout(){
+  const alert = await this.alertController.create({
+    header: 'Alert',
+    subHeader: 'Status',
+    message: 'LOG OUT SUCCESSFULLY',
+    buttons: ['OK']
+  });
+  await alert.present();
+  this.authenticate.canProceed = true;
+  this.route.navigate(['login']);
+}
+setting(){
 
-  clickAuthenticate() {
-    this.dataService.canProceed = true;
-    console.log('Successfully Authenticate!');
-    this.isHide = false;
-  }
+  this.route.navigate(['setting'])
+}
+async toggleModal() {
+  const modal = await this.modalController.create({
+    component: ModalComponent
+  });
+  return await modal.present();
+}
 
-  async addObject(){
-    this.myArray = await this.dataService.fetchData1();
-    this.nextnumber = this.myArray.length + 1;
-    this.dataService.addToMyArray(this.nextnumber);
-  }
+
+
 
 }
