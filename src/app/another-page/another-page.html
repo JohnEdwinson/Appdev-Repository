@@ -1,10 +1,7 @@
 <ion-header [translucent]="true">
     <ion-toolbar>
-        <ion-buttons slot="start">
-          <ion-back-button default-href="#"></ion-back-button>
-        </ion-buttons>
       <ion-title class= "top">
-        My Custom Page
+        Another Page
       </ion-title>
     </ion-toolbar>
   </ion-header>
@@ -17,6 +14,10 @@
     </ion-header>
   
     <div id="container">
-      <strong>This is ID: {{id}} </strong>
+      <strong>SELECT BUTTON<br></strong>
+      <ion-button href="shared-folder">Go By Link</ion-button><br>
+      <ion-button (click)="goToNextPage()">Go By Event</ion-button><br>
+      <ion-button (click)="goWithAuthorization()">Authenticate</ion-button>
     </div>
   </ion-content>
+  
