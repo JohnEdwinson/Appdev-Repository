@@ -21,6 +21,10 @@ const routes: Routes = [
   path: 'setting',
   loadChildren: () => import('./setting/setting.module').then( m => m.SettingPageModule)
 },
+{
+  path: 'calculator',
+  loadChildren: () => import('./calculator/calculator.module').then( m => m.CalculatorPageModule)
+},
  ]
  },
  
@@ -30,14 +34,12 @@ const routes: Routes = [
     pathMatch: 'full'
   },
 
-  
   {
     path: 'login',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   },
  
  
-
 ];
 
 @NgModule({
