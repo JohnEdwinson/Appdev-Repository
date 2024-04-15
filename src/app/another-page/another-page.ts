@@ -3,7 +3,7 @@ import { AuthenticationService } from '../authentication.service';
 import { Router } from '@angular/router';
 
 @Component({
-  templateUrl: './another-page.html',
+  templateUrl: './Another-Page.html',
 })
 export class AnotherPage implements OnInit{
 

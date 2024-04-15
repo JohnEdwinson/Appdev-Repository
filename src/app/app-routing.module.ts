@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { AnotherPage } from './another-page/another-page';
+import { AnotherPage } from './Another-Page/Another-Page';
 import { AuthenticationService } from './authentication.service';
-import { NewComponent } from './home/new-component/new-component';
+import { NewComponent } from './new-component/new-component';
 
 const routes: Routes = [
   {
