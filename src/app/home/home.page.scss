@@ -8,20 +8,34 @@
   transform: translateY(-50%);
 }
 
-#container strong {
+#black #container strong {
   font-size: 20px;
   line-height: 26px;
+  background-color: black;
 }
 
-#container p {
+#black #container p {
   font-size: 16px;
   line-height: 22px;
-
   color: #8c8c8c;
-
+  background-color: black;
   margin: 0;
 }
 
 #container a {
   text-decoration: none;
+}
+
+#black {
+  position: relative;
+  z-index: -1;
+  top:50%;
+  background-color: burlywood;
+  margin-top: 10px;
+}
+
+.ion-card-content{
+
+  position: relative;
+  margin-top: 50px;
 }
