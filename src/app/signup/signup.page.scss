@@ -1,0 +1,53 @@
+#container {
+    background: linear-gradient(to bottom, #ff0037 0%, #050505 100%);
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.container-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba($color: #dbdbdb, $alpha: 0.5);
+    width: 100%;
+    height: auto;
+    border-radius: 20px 20px 0 0;
+    overflow: hidden;
+    padding: 2rem;
+}
+
+.container-box h2 {
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #cafa47;
+}
+
+.input-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+ion-item {
+    margin-top: 2rem;
+    --ion-text-color: #01040f;
+}
+
+ion-button {
+    --ion-color-primary: linear-gradient(to right, #ffc609 0%, #fffb00  100%);           
+    margin-top: 2rem;
+    width: 100%;
+}
+         
+ 
+.input-box h3 {
+    font-size: 15px;
+    color: #CCD6F6;
+}
