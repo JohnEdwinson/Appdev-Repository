@@ -1,0 +1,9 @@
+{
+  "projects": {
+    "default": "delos--reyes-act-10",
+    "act-10-delosreyes": "delos--reyes-act-10"
+  },
+  "targets": {},
+  "etags": {},
+  "dataconnectEmulatorConfig": {}
+}
